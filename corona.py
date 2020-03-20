@@ -12,6 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
+import glob
 
 #URL to scrape data
 url = "https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/"
@@ -54,20 +55,32 @@ df['Casos Totales']= df['Casos Totales'].astype(float)
 df_plot =  df.iloc[2:16]
 
 
+img_file = datetime.date.today().strftime("%d-%m-%Y")
+
+
 #plotting New cases and all cases of Chile
 plt.plot(df_plot['Region'],df_plot['Nuevos Casos'], label = "Nuevos Casos")
 plt.plot(df_plot['Region'],df_plot['Casos Totales'], label = "Casos Totales")
 plt.ylabel('Casos')
-plt.title('Corona Virus En Chile')
+plt.title('Corona Virus En Chile 20-03-2020')
 plt.xlabel('Regiones')
 plt.xticks(rotation=90)
 plt.legend()
+plt.savefig(img_file)
 plt.show()
+
 
 #exporting dataframe to CSV with date
 
-filename = datetime.date.today().strftime("%d-%m-%Y")+'-''.csv'
+filename = datetime.date.today().strftime("%d-%m-%Y")+'-coronavirus-chile.csv'
 
 df.to_csv(filename)
 
+
+files = sorted(glob.glob('*-coronavirus-chile.csv'))
+
+Dates=[]
+rankscore = []
+for f in files:
+    print(f)
         
