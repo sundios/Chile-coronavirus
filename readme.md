@@ -1,4 +1,4 @@
-# Project Title
+# Corona Virus in Chile
 
 Daily Corona virus fdata from Chile. Scraped daily from Minsal.cl.  
 
