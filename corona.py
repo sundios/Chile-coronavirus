@@ -134,6 +134,7 @@ plt.tight_layout()
 plt.savefig(img_file2)
 plt.show()
 
+markdown = daily.to_markdown()
 
 
     
