@@ -3,7 +3,7 @@
 Daily Corona virus fdata from Chile. Scraped daily from Minsal.cl.  
 
 ## 19-03-2020
-<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/19-03-2020.png" width="600" height="500">
+<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/19-03-2020.png" width="500" height="450">
 
 |Index |Region             |Nuevos Casos|Casos Totales|
 |------|-------------------|------------|-------------|
@@ -27,7 +27,7 @@ Daily Corona virus fdata from Chile. Scraped daily from Minsal.cl.
 
 
 ## 20-03-2020
-<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/20-03-2020.png" width="600" height="500">
+<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/20-03-2020.png" width="500" height="450">
 
 |Index |Region             |Nuevos Casos|Casos Totales|
 |------|-------------------|------------|-------------|

@@ -41,8 +41,15 @@ for tr in soup.find_all("tr")[1:]:
             cells.append(td.text.strip())
     rows.append(cells)
 
+
 #transforming scraped data(text) into a dataframe with new columns
 df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales'])
+
+
+#creating date column
+dates = datetime.date.today().strftime("%d-%m-%Y")
+
+df['Dates'] =  dates
 
 #removing noise and selecting only columns we need
 df = df.iloc[2:19]
@@ -55,32 +62,79 @@ df['Casos Totales']= df['Casos Totales'].astype(float)
 df_plot =  df.iloc[2:16]
 
 
-img_file = datetime.date.today().strftime("%d-%m-%Y")
 
 
 #plotting New cases and all cases of Chile
+
+img_file = 'Images/' + datetime.date.today().strftime("%d-%m-%Y")
+title = 'Corona Virus en Chile ' + datetime.date.today().strftime("%d-%m-%Y")
+
 plt.plot(df_plot['Region'],df_plot['Nuevos Casos'], label = "Nuevos Casos")
 plt.plot(df_plot['Region'],df_plot['Casos Totales'], label = "Casos Totales")
-plt.ylabel('Casos')
-plt.title('Corona Virus En Chile 20-03-2020')
+plt.ylabel('# Casos')
+plt.title(title )
 plt.xlabel('Regiones')
 plt.xticks(rotation=90)
 plt.legend()
+plt.tight_layout()
 plt.savefig(img_file)
 plt.show()
 
 
 #exporting dataframe to CSV with date
 
+#filename with date
 filename = datetime.date.today().strftime("%d-%m-%Y")+'-coronavirus-chile.csv'
 
-df.to_csv(filename)
+#here we export it to CSV
+df.to_csv(filename,index=False)
 
 
+#Files that we want to run to get totals
 files = sorted(glob.glob('*-coronavirus-chile.csv'))
 
-Dates=[]
-rankscore = []
+
+dates=[]
+totals = []
+totals_daily =[]
 for f in files:
+    df1 = pd.read_csv(f,index_col=False)
     print(f)
+    d = df1.iloc[0:1,3]
+    d = d.to_string(index=False)
+    t = df1.iloc[16:,2]
+    t = t.to_string(index=False)
+    td = df1.iloc[16:,1]
+    td = td.to_string(index=False)
+    totals.append(t)
+    dates.append(d)
+    totals_daily.append(td)
+    
+#xipping 3 new df into one
+daily = pd.DataFrame(list(zip(dates, totals,totals_daily)),
+              columns=['Fecha','Casos Totales','Nuevos Casos Diarios'])
+
+#float numbers
+daily['Casos Totales'] = daily['Casos Totales'].astype(float)
+daily['Nuevos Casos Diarios'] = daily['Nuevos Casos Diarios'].astype(float)
+
+
+#plotting
+img_file2 = 'Images/'+ datetime.date.today().strftime("%d-%m-%Y") + 'Totales-Chile'
+title2 = 'Corona Virus en Chile Totales ' + datetime.date.today().strftime("%d-%m-%Y")
+
+plt.plot(daily['Fecha'],daily['Casos Totales'], label = "Casos Totales")
+plt.plot(daily['Fecha'],daily['Nuevos Casos Diarios'], label = "Nuevos Casos Diarios")
+plt.ylabel('# Casos')
+plt.xlabel('Fecha')
+plt.title(title2)
+plt.xticks(rotation=90)
+plt.legend()
+plt.tight_layout()
+plt.savefig(img_file2)
+plt.show()
+
+
+
+    
         
