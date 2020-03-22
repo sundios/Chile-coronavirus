@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "corona-271822",
+  "private_key_id": "e18788e4c8470086e59e148a93d091d023552ee4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCgQvn9ycyzxV1s\n8ih4h7iv0Ea1EcdbNRJGYBIF+R6yMeltxpUb/0USy/jUhfoX1gWgUfcn+ANagpYf\nCbNtt4pkI+qSVGK9/oiscJzZ9yeFa1sMg3KU4Ezv2ksyz0ryPtLwqwceP0maVs/s\nhYIggckOgzuFcZQssGowd+jsYBsJaKOSlLIouwIy5hEW23bTec1cMWCqF35MQ6Xk\nonuixlYZS+9qNNPNHEZTSwBYRbRgxH08flSx2xyk9vQYkL9WlWrSCxlxBL/UrDmR\nTsSSmUBqhhIUK18gZbtOfS3AmTgEU60E8Yy/KiY9whg5MOMA8Oqg0hi2IlAOUd/a\nnoFQaJCtAgMBAAECggEAA6F40e3aOCFqzC7RSWfDwKHulCgWtOOHKjZ/egiqkB1u\n3SiQVL3MBhC+bqwpXhRgdMEeoRZulwSZ25Kn8L6lgT7KD+4e/ZBwbr2vZAXELLLh\nsW8h76sEOzPeG8TT/Rh8xWyOgPosk/VPCRv+NnfSQwSoms2XroqBoV76FS7ZNfWS\neENrgk9mtLaoWYgPdtlFFdWuFfDVtu11O0OqZ4H/3AGJ1PHqDX7WyLVRfXHkrp+/\nEcZyK7Z0pJC6eVkOnMBNAvP50kwwt95BvFjHAI0riFZ/MCNA3OFoAhmOsJfs7DPx\nYieJeyWx71n0q6zk7GtS3lfnV+D3f9JmFZZ3N8jtSQKBgQDbNLusquMM3xMcxM9c\ncoGGc2qpD7L+CBKIe3TnDBo34fZtdl34ykeK+P7ZSdY2lN0mCl24CDD/+ui8mtfW\ng6VY3WAC62MlTJTVgVlH6P9OnWYBcrqk6JNMmoFH3alkwLXEo9cwbYzAQD8DvmUK\nemHCArf35ZEz2Edh9wcaTKrWlQKBgQC7KWh4f7ZrgFTypmA+mkJMqtT0nmpAFL8p\nRPzXwlqsM+c66yH83S0Md86CvPzEcUQyxLl4pI5roPuLqWzhGSClrPGlfzTj7d3I\n6PJdySrkTt2tz52kg2Gwb93u6ZkjddBpayj+MGTJmQKfpI3B+Idvtjyqh35hbk95\ny+AGSYDDuQKBgQCIapPVC/AK5ZSOVci6PqRu2Mrq9VMuFjX6a+I/m1+BoYTrcDth\nBflp+jUXYoUGKLRL5S2Xxrk/xJUsMqzZ2cl/uRz0FCr6XmNNT5cRUmX4NanygsS2\ntepdRNXptH+jrO4xtsjHYZWzWwgcO1PEJo9J3slAY8RuYE1kIQhxjH7Q1QKBgQCv\nVIErsOhhGJ17muS6gKPvUnGgnu6GDWlu7dO3A7kRbKYHCdKTIVdcQLfSvdxE4p6y\nuJvPKsjIhsxe716yGGn/Cl5tXRddFq4X0jGKLjPiIQeGFeJmBTX0pTdQ4sC0+V8+\nAkcqqIciXBabGvo5ZerqedunHLsF5uLJBHZfLWhU8QKBgD4DdB1esLCyjEuBV+Xr\n+Uei7vlraKvUNPIZvnUoKT4fpZNHS94zjGP9jNadkubioPxoin5whRp4VNQhpGjg\nPRDS1XLxFU1tWyrofraDWoNgZsbfyYaf7M/Le1m8+1EK3Hq7FOqm+1dJHXqd6z0M\nMWZXcqEkIzf7/u+SO2uRnQOw\n-----END PRIVATE KEY-----\n",
+  "client_email": "corona-chile@corona-271822.iam.gserviceaccount.com",
+  "client_id": "101377219123600259381",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/corona-chile%40corona-271822.iam.gserviceaccount.com"
+}

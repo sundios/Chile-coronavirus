@@ -43,7 +43,7 @@ for tr in soup.find_all("tr")[1:]:
 
 
 #transforming scraped data(text) into a dataframe with new columns
-df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales'])
+df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales','Casos Recuperados'])
 
 
 #creating date column
@@ -57,6 +57,7 @@ df = df.iloc[2:19]
 # Convert everything to float values
 df['Nuevos Casos']= df['Nuevos Casos'].astype(float)
 df['Casos Totales']= df['Casos Totales'].astype(float)
+
 
 #creating new DF to plot without total values
 df_plot =  df.iloc[2:16]
@@ -94,29 +95,36 @@ df.to_csv(filename,index=False)
 files = sorted(glob.glob('*-coronavirus-chile.csv'))
 
 
+markdown_daily = df.to_markdown()
+
 dates=[]
 totals = []
 totals_daily =[]
+recuperados = []
 for f in files:
     df1 = pd.read_csv(f,index_col=False)
     print(f)
-    d = df1.iloc[0:1,3]
+    d = df1.iloc[0:1,4]
     d = d.to_string(index=False)
     t = df1.iloc[16:,2]
     t = t.to_string(index=False)
     td = df1.iloc[16:,1]
     td = td.to_string(index=False)
+    r = df1.iloc[16:,3]
+    r = r.to_string(index=False)
     totals.append(t)
     dates.append(d)
     totals_daily.append(td)
+    recuperados.append(r)
     
 #xipping 3 new df into one
-daily = pd.DataFrame(list(zip(dates, totals,totals_daily)),
-              columns=['Fecha','Casos Totales','Nuevos Casos Diarios'])
+daily = pd.DataFrame(list(zip(dates, totals,totals_daily,recuperados)),
+              columns=['Fecha','Casos Totales','Nuevos Casos Diarios','Recuperados'])
 
 #float numbers
 daily['Casos Totales'] = daily['Casos Totales'].astype(float)
 daily['Nuevos Casos Diarios'] = daily['Nuevos Casos Diarios'].astype(float)
+daily['Recuperados'] = daily['Recuperados'].astype(float)
 
 
 #plotting
@@ -125,6 +133,7 @@ title2 = 'Corona Virus en Chile Totales ' + datetime.date.today().strftime("%d-%
 
 plt.plot(daily['Fecha'],daily['Casos Totales'], label = "Casos Totales")
 plt.plot(daily['Fecha'],daily['Nuevos Casos Diarios'], label = "Nuevos Casos Diarios")
+plt.plot(daily['Fecha'],daily['Recuperados'], label = "Casos Recuperados")
 plt.ylabel('# Casos')
 plt.xlabel('Fecha')
 plt.title(title2)
@@ -134,8 +143,8 @@ plt.tight_layout()
 plt.savefig(img_file2)
 plt.show()
 
+
+
 markdown = daily.to_markdown()
 
 
-    
-        
