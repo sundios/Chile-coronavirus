@@ -128,7 +128,7 @@ daily['Recuperados'] = daily['Recuperados'].astype(float)
 
 
 #plotting
-img_file2 = 'Images/'+ datetime.date.today().strftime("%d-%m-%Y") + 'Totales-Chile'
+img_file2 = 'Images/Totales-Chile'
 title2 = 'Corona Virus en Chile Totales ' + datetime.date.today().strftime("%d-%m-%Y")
 
 plt.plot(daily['Fecha'],daily['Casos Totales'], label = "Casos Totales")
