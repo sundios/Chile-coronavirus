@@ -1,18 +1,18 @@
-Region,Nuevos Casos,Casos Totales,Casos Recuperados,Dates
-Arica y Parinacota,1.0,2.0,–,22-03-2020
-Tarapacá,0.0,0.0,–,22-03-2020
-Antofagasta,1.0,11.0,–,22-03-2020
-Atacama,0.0,1.0,–,22-03-2020
-Coquimbo,2.0,5.0,–,22-03-2020
-Valparaíso,3.0,16.0,–,22-03-2020
-Metropolitana,50.0,409.0,–,22-03-2020
-O’Higgins,1.0,8.0,–,22-03-2020
-Maule,10.0,25.0,–,22-03-2020
-Ñuble,6.0,64.0,–,22-03-2020
-Biobío,5.0,35.0,–,22-03-2020
-Araucanía,12.0,27.0,–,22-03-2020
-Los Ríos,0.0,1.0,–,22-03-2020
-Los Lagos,3.0,23.0,–,22-03-2020
-Aysén,0.0,1.0,–,22-03-2020
-Magallanes,1.0,4.0,–,22-03-2020
-Total,95.0,632.0,8,22-03-2020
+Region,Nuevos Casos,Casos Totales,Fallecidos,Recuperados,Dates
+Arica y Parinacota,1,2,0,0,22-03-2020
+Tarapacá,0,0,0,0,22-03-2020
+Antofagasta,1,11,0,0,22-03-2020
+Atacama,0,1,0,0,22-03-2020
+Coquimbo,2,5,0,0,22-03-2020
+Valparaíso,3,16,0,0,22-03-2020
+Metropolitana,50,409,1,0,22-03-2020
+O’Higgins,1,8,0,0,22-03-2020
+Maule,10,25,0,0,22-03-2020
+Ñuble,6,64,0,0,22-03-2020
+Biobío,5,35,0,0,22-03-2020
+Araucanía,12,27,0,0,22-03-2020
+Los Ríos,0,1,0,0,22-03-2020
+Los Lagos,3,23,0,0,22-03-2020
+Aysén,0,1,0,0,22-03-2020
+Magallanes,1,4,0,0,22-03-2020
+Total,95,632,1,8,23-03-2020

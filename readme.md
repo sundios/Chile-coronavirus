@@ -2,9 +2,16 @@
 
 Daily Corona virus fdata from Chile. Scraped daily from Minsal.cl. 
 
+
+
+## Live Dashboard
+
+Im pushing everything to a Live dashobard that you can find [here](https://datastudio.google.com/reporting/f97733c1-17e1-4bd6-8841-9dd2d45ac9b4)
+
+
 ## Daily Chile cases
 
-<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/Totales-Chile.png" width="500" height="450">
+<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/Totales-Chile.png" width="60%" height="100%">
 
 ## Day By Day 
 
@@ -82,7 +89,7 @@ Daily Corona virus fdata from Chile. Scraped daily from Minsal.cl.
 | 18 | Total              |            103 |             537 | 8                   | 21-03-2020 |
 
 
-###22-03-2020
+### 22-03-2020
 <img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/22-03-2020.png" width="60%" height="100%">
 |    | Region             |   Nuevos Casos |   Casos Totales | Casos Recuperados   | Dates      |
 |---:|:-------------------|---------------:|----------------:|:--------------------|:-----------|
@@ -104,3 +111,25 @@ Daily Corona virus fdata from Chile. Scraped daily from Minsal.cl.
 | 17 | Magallanes         |              1 |               4 | –                   | 22-03-2020 |
 | 18 | Total              |             95 |             632 | 8                   | 22-03-2020 |
 
+
+### 23-03-2020
+<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/23-03-2020.png" width="60%" height="100%">
+|    | Region             |   Nuevos Casos |   Casos Totales |   Fallecidos |   Recuperados | Dates      |
+|---:|:-------------------|---------------:|----------------:|-------------:|--------------:|:-----------|
+|  2 | Arica y Parinacota |              0 |               2 |            0 |             0 | 23-03-2020 |
+|  3 | Tarapacá           |              1 |               1 |            0 |             0 | 23-03-2020 |
+|  4 | Antofagasta        |              0 |              11 |            0 |             0 | 23-03-2020 |
+|  5 | Atacama            |              0 |               1 |            0 |             0 | 23-03-2020 |
+|  6 | Coquimbo           |              1 |               6 |            0 |             0 | 23-03-2020 |
+|  7 | Valparaíso         |              3 |              19 |            0 |             0 | 23-03-2020 |
+|  8 | Metropolitana      |             50 |             459 |            1 |             0 | 23-03-2020 |
+|  9 | O’Higgins          |              0 |               8 |            0 |             0 | 23-03-2020 |
+| 10 | Maule              |              3 |              28 |            0 |             0 | 23-03-2020 |
+| 11 | Ñuble              |             17 |              81 |            0 |             0 | 23-03-2020 |
+| 12 | Biobío             |             11 |              46 |            0 |             0 | 23-03-2020 |
+| 13 | Araucanía          |             13 |              40 |            0 |             0 | 23-03-2020 |
+| 14 | Los Ríos           |              3 |               4 |            0 |             0 | 23-03-2020 |
+| 15 | Los Lagos          |             10 |              33 |            0 |             0 | 23-03-2020 |
+| 16 | Aysén              |              0 |               1 |            0 |             0 | 23-03-2020 |
+| 17 | Magallanes         |              2 |               6 |            0 |             0 | 23-03-2020 |
+| 18 | Total              |            114 |             746 |            1 |            11 | 23-03-2020 |
