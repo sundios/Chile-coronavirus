@@ -91,6 +91,7 @@ Im pushing everything to a Live dashobard that you can find [here](https://datas
 
 ### 22-03-2020
 <img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/22-03-2020.png" width="60%" height="100%">
+z
 |    | Region             |   Nuevos Casos |   Casos Totales | Casos Recuperados   | Dates      |
 |---:|:-------------------|---------------:|----------------:|:--------------------|:-----------|
 |  2 | Arica y Parinacota |              1 |               2 | –                   | 22-03-2020 |
@@ -114,6 +115,7 @@ Im pushing everything to a Live dashobard that you can find [here](https://datas
 
 ### 23-03-2020
 <img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/23-03-2020.png" width="60%" height="100%">
+
 |    | Region             |   Nuevos Casos |   Casos Totales |   Fallecidos |   Recuperados | Dates      |
 |---:|:-------------------|---------------:|----------------:|-------------:|--------------:|:-----------|
 |  2 | Arica y Parinacota |              0 |               2 |            0 |             0 | 23-03-2020 |
