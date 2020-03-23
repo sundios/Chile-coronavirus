@@ -71,15 +71,12 @@ dates = datetime.date.today().strftime("%d-%m-%Y")
 
 df['Dates'] =  dates
 
-
-
 # Convert everything to float values
 df['Nuevos Casos']= df['Nuevos Casos'].astype(float)
 df['Casos Totales']= df['Casos Totales'].astype(float)
 df['Fallecidos']= df['Fallecidos'].astype(float)
 df['Recuperados']= df['Recuperados'].astype(float)
 
-df
 
 #Plotting without totals
 df_plot = df.iloc[0:16]
@@ -115,7 +112,7 @@ df.to_csv(filename,index=False)
 #Files that we want to run to get totals
 files = sorted(glob.glob('*-coronavirus-chile.csv'))
 
-#f = '23-03-2020-coronavirus-chile.csv'
+
 
 dates=[]
 totals = []

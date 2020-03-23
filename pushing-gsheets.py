@@ -6,7 +6,7 @@ Created on Sat Mar 21 19:49:03 2020
 @author: konradburchardt
 """
   
-from corona import df,daily
+from corona import df,daily,totales
 from regiones import r
 import datetime
 import pygsheets
@@ -25,9 +25,11 @@ wks = sh[0]
 wks.set_dataframe(daily,'A1',copy_head=True)
 
 #select the first sheet 
-wks = sh[18]
+wks = sh[19]
 
-#update the first sheet with df, starting at cell A1. 
+df = df.iloc[0:16]
+
+# with df, starting at cell A1. 
 wks.set_dataframe(df,'A1',copy_head=True)
 
 
@@ -42,3 +44,14 @@ for j in range(1,18):
     print(j)
     wsheet = sh[j]
     wsheet.set_dataframe(r[j-1],'A1',copy_head=True)
+
+
+#totales for scorecard in dashboard
+
+totales = df.iloc[16:17,]
+#selecting sheet # 20
+tot = sh[20]
+
+#Updating Totales for Score card
+tot.set_dataframe(totales,'A1',copy_head=True)
+
