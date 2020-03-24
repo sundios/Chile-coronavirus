@@ -20,6 +20,6 @@ print(markdown_daily)
 
 date= datetime.date.today().strftime("%d-%m-%Y")
 
-print("\n"+ '### ' + date + "\n" + '<img src="https://github.com/sundios/Chile-coronavirus/blob/master/' + img_file + '.png" width="60%" height="100%"> '+ "\n" + markdown_daily, file=open("readme.md", "a"))
+print("\n"+ '### ' + date + "\n" + '<img src="https://github.com/sundios/Chile-coronavirus/blob/master/' + img_file + '.png" width="60%" height="100%"> ' + " " + "\n" + markdown_daily, file=open("readme.md", "a"))
 
 
