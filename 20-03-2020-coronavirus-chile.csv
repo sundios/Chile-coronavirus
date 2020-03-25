@@ -1,18 +1,18 @@
-Region,Nuevos Casos,Casos Totales,Fallecidos,Recuperados,Dates
-Arica y Parinacota,0,1,0,0,20-03-2020
-Tarapacá,0,0,0,0,20-03-2020
-Antofagasta,4,6,0,0,20-03-2020
-Atacama,0,1,0,0,20-03-2020
-Coquimbo,1,3,0,0,20-03-2020
-Valparaíso,1,5,0,0,20-03-2020
-Metropolitana,57,304,1,0,20-03-2020
-O’Higgins,4,6,0,0,20-03-2020
-Maule,0,14,0,0,20-03-2020
-Ñuble,16,44,0,0,20-03-2020
-Biobío,5,19,0,0,20-03-2020
-Araucanía,2,9,0,0,20-03-2020
-Los Ríos,0,1,0,0,20-03-2020
-Los Lagos,2,18,0,0,20-03-2020
-Aysén,0,1,0,0,20-03-2020
-Magallanes,0,2,0,0,20-03-2020
-Total,92,434,0,0,20-03-2020
+Region,Nuevos Casos,Casos Totales,% Casos Totales,Fallecidos,Recuperados,Dates
+Arica y Parinacota,0,1,0,0,0,20-03-2020
+Tarapacá,0,0,0,0,0,20-03-2020
+Antofagasta,4,6,0,0,0,20-03-2020
+Atacama,0,1,0,0,0,20-03-2020
+Coquimbo,1,3,0,0,0,20-03-2020
+Valparaíso,1,5,0,0,0,20-03-2020
+Metropolitana,57,304,0,1,0,20-03-2020
+O’Higgins,4,6,0,0,0,20-03-2020
+Maule,0,14,0,0,0,20-03-2020
+Ñuble,16,44,0,0,0,20-03-2020
+Biobío,5,19,0,0,0,20-03-2020
+Araucanía,2,9,0,0,0,20-03-2020
+Los Ríos,0,1,0,0,0,20-03-2020
+Los Lagos,2,18,0,0,0,20-03-2020
+Aysén,0,1,0,0,0,20-03-2020
+Magallanes,0,2,0,0,0,20-03-2020
+Total,92,434,0,0,0,20-03-2020

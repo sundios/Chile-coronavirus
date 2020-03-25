@@ -43,7 +43,7 @@ for tr in soup.find_all("tr")[1:]:
 
 
 #transforming scraped data(text) into a dataframe with new columns
-df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales','Fallecidos'])
+df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales','% Casos totales','Fallecidos'])
 
 
 
@@ -113,7 +113,6 @@ df.to_csv(filename,index=False)
 files = sorted(glob.glob('*-coronavirus-chile.csv'))
 
 
-
 dates=[]
 totals = []
 totals_daily =[]
@@ -122,15 +121,15 @@ fallecidos = []
 for f in files:
     df1 = pd.read_csv(f,index_col=False)
     print(f)
-    d = df1.iloc[0:1,5]
+    d = df1.iloc[0:1,6]
     d = d.to_string(index=False)
     t = df1.iloc[16:,2]
     t = t.to_string(index=False)
     td = df1.iloc[16:,1]
     td = td.to_string(index=False)
-    f = df1.iloc[16:,3]
+    f = df1.iloc[16:,4]
     f = f.to_string(index=False)
-    r = df1.iloc[16:,4]
+    r = df1.iloc[16:,5]
     r = r.to_string(index=False)
     totals.append(t)
     dates.append(d)
@@ -138,6 +137,8 @@ for f in files:
     recuperados.append(r)
     fallecidos.append(f)
     
+    
+
 #zipping 3 new df into one
 daily = pd.DataFrame(list(zip(dates,totals,totals_daily,recuperados,fallecidos)),
               columns=['Fecha','Casos Totales','Nuevos Casos Diarios','Recuperados','Fallecidos'])
@@ -148,7 +149,10 @@ daily['Nuevos Casos Diarios'] = daily['Nuevos Casos Diarios'].astype(float)
 daily['Recuperados'] = daily['Recuperados'].astype(float)
 daily['Fallecidos'] = daily['Fallecidos'].astype(float)
 
+
 daily = pd.DataFrame(daily)
+
+
 
 #plotting
 img_file2 = 'Images/Totales-Chile'

@@ -34,6 +34,8 @@ regiones = list(dict.fromkeys(regiones))
 #sort by region and Date
 df = df.sort_values(by=['Region','Dates'])
 
+df = df[['Region','Nuevos Casos','Casos Totales','Fallecidos','Recuperados','Dates']]
+
 #grouping regiones together by date
 r=[]
 for j in range(1):
@@ -46,8 +48,6 @@ for j in range(1):
 #Groupping Regions by totals
         
 group_region = df.groupby(['Region']).sum()
-
-
 
 
 
