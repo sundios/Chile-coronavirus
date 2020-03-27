@@ -42,9 +42,9 @@ for tr in soup.find_all("tr")[1:]:
     rows.append(cells)
 
 
+
 #transforming scraped data(text) into a dataframe with new columns
 df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales','% Casos totales','Fallecidos'])
-
 
 
 #getting recuperados
@@ -71,11 +71,17 @@ dates = datetime.date.today().strftime("%d-%m-%Y")
 
 df['Dates'] =  dates
 
+
+df.dtypes
+
+df['Casos Totales'] = df['Casos Totales'].str.replace(".","")
+
 # Convert everything to float values
 df['Nuevos Casos']= df['Nuevos Casos'].astype(float)
-df['Casos Totales']= df['Casos Totales'].astype(float)
+df['Casos Totales']= df['Casos Totales'].astype(int)
 df['Fallecidos']= df['Fallecidos'].astype(float)
 df['Recuperados']= df['Recuperados'].astype(float)
+
 
 
 #Plotting without totals
@@ -172,6 +178,7 @@ ax2.set_ylabel('# Casos Diarios', color='black')
 ax2.legend(loc=0)
 ax1.grid()
 plt.title(title2)
+plt.xticks(rotation=90)
 plt.savefig(img_file2)
 plt.show()
 
