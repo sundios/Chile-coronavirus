@@ -209,3 +209,26 @@ Im pushing everything to a Live dashobard that you can find [here](https://datas
 | 18 | Total              |            164 |           1.306 | 100%              |            4 |            33 | 26-03-2020 |
 
 
+
+### 27-03-2020
+<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/27-03-2020.png" width="60%" height="100%"> 
+
+|    | Region             |   Nuevos Casos |   Casos Totales | % Casos totales   |   Fallecidos |   Recuperados | Dates      |
+|---:|:-------------------|---------------:|----------------:|:------------------|-------------:|--------------:|:-----------|
+|  2 | Arica y Parinacota |              1 |               3 | 0 %               |            0 |             0 | 27-03-2020 |
+|  3 | Tarapacá           |              1 |               5 | 0 %               |            0 |             0 | 27-03-2020 |
+|  4 | Antofagasta        |              1 |              20 | 2 %               |            0 |             0 | 27-03-2020 |
+|  5 | Atacama            |              0 |               1 | 0 %               |            0 |             0 | 27-03-2020 |
+|  6 | Coquimbo           |              1 |              13 | 1 %               |            0 |             0 | 27-03-2020 |
+|  7 | Valparaíso         |             12 |              44 | 3 %               |            0 |             0 | 27-03-2020 |
+|  8 | Metropolitana      |             64 |             746 | 57 %              |            3 |             0 | 27-03-2020 |
+|  9 | O’Higgins          |              3 |              14 | 1 %               |            0 |             0 | 27-03-2020 |
+| 10 | Maule              |              1 |              31 | 2 %               |            0 |             0 | 27-03-2020 |
+| 11 | Ñuble              |              3 |             114 | 9 %               |            0 |             0 | 27-03-2020 |
+| 12 | Biobío             |             14 |             109 | 8 %               |            1 |             0 | 27-03-2020 |
+| 13 | Araucanía          |             37 |             111 | 8 %               |            0 |             0 | 27-03-2020 |
+| 14 | Los Ríos           |              3 |              14 | 1 %               |            0 |             0 | 27-03-2020 |
+| 15 | Los Lagos          |             16 |              60 | 5 %               |            0 |             0 | 27-03-2020 |
+| 16 | Aysén              |              1 |               2 | 0 %               |            0 |             0 | 27-03-2020 |
+| 17 | Magallanes         |              6 |              19 | 1 %               |            0 |             0 | 27-03-2020 |
+| 18 | Total              |            164 |            1306 | 100%              |            4 |            33 | 27-03-2020 |

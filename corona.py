@@ -71,9 +71,11 @@ dates = datetime.date.today().strftime("%d-%m-%Y")
 
 df['Dates'] =  dates
 
-
+#checking Data types
 df.dtypes
 
+
+#removing . in thousand separator
 df['Casos Totales'] = df['Casos Totales'].str.replace(".","")
 
 # Convert everything to float values
@@ -171,6 +173,8 @@ ax1.plot(daily['Fecha'],daily['Casos Totales'], label = "Casos Totales",color="r
 ax1.set_ylabel('# Casos Totales', color='black')
 ax1.set_xlabel('Fecha')
 ax1.legend(loc=0)
+plt.xticks(rotation=90)
+plt.tight_layout()
                
 ax2 = ax1.twinx()
 ax2.plot(daily['Fecha'],daily['Nuevos Casos Diarios'], label = "Nuevos Casos Diarios")
@@ -179,7 +183,7 @@ ax2.legend(loc=0)
 ax1.grid()
 plt.title(title2)
 plt.xticks(rotation=90)
-plt.savefig(img_file2)
+plt.savefig(img_file2, bbox_inches='tight')
 plt.show()
 
 
