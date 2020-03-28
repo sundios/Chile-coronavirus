@@ -232,3 +232,26 @@ Im pushing everything to a Live dashobard that you can find [here](https://datas
 | 16 | Aysén              |              1 |               2 | 0 %               |            0 |             0 | 27-03-2020 |
 | 17 | Magallanes         |              6 |              19 | 1 %               |            0 |             0 | 27-03-2020 |
 | 18 | Total              |            164 |            1306 | 100%              |            4 |            33 | 27-03-2020 |
+
+### 28-03-2020
+<img src="https://github.com/sundios/Chile-coronavirus/blob/master/Images/28-03-2020.png" width="60%" height="100%"> 
+
+|    | Region             |   Nuevos Casos |   Casos Totales | % Casos totales   |   Fallecidos |   Recuperados | Dates      |
+|---:|:-------------------|---------------:|----------------:|:------------------|-------------:|--------------:|:-----------|
+|  2 | Arica y Parinacota |              0 |               3 | 0 %               |            0 |             0 | 28-03-2020 |
+|  3 | Tarapacá           |              0 |               5 | 0 %               |            0 |             0 | 28-03-2020 |
+|  4 | Antofagasta        |              4 |              25 | 1 %               |            0 |             0 | 28-03-2020 |
+|  5 | Atacama            |              0 |               1 | 0 %               |            0 |             0 | 28-03-2020 |
+|  6 | Coquimbo           |              1 |              15 | 1 %               |            0 |             0 | 28-03-2020 |
+|  7 | Valparaíso         |             22 |              71 | 4 %               |            0 |             0 | 28-03-2020 |
+|  8 | Metropolitana      |            146 |            1084 | 57 %              |            3 |             0 | 28-03-2020 |
+|  9 | O’Higgins          |              4 |              20 | 1 %               |            0 |             0 | 28-03-2020 |
+| 10 | Maule              |              5 |              37 | 2 %               |            0 |             0 | 28-03-2020 |
+| 11 | Ñuble              |             28 |             172 | 9 %               |            0 |             0 | 28-03-2020 |
+| 12 | Biobío             |             16 |             151 | 8 %               |            2 |             0 | 28-03-2020 |
+| 13 | Araucanía          |             34 |             177 | 9 %               |            1 |             0 | 28-03-2020 |
+| 14 | Los Ríos           |              5 |              27 | 1 %               |            0 |             0 | 28-03-2020 |
+| 15 | Los Lagos          |             30 |              93 | 5 %               |            0 |             0 | 28-03-2020 |
+| 16 | Aysén              |              0 |               2 | 0 %               |            0 |             0 | 28-03-2020 |
+| 17 | Magallanes         |              4 |              26 | 1 %               |            0 |             0 | 28-03-2020 |
+| 18 | Total              |            299 |            1909 | 100%              |            6 |            61 | 28-03-2020 |

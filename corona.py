@@ -42,7 +42,6 @@ for tr in soup.find_all("tr")[1:]:
     rows.append(cells)
 
 
-
 #transforming scraped data(text) into a dataframe with new columns
 df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales','% Casos totales','Fallecidos'])
 
@@ -74,13 +73,12 @@ df['Dates'] =  dates
 #checking Data types
 df.dtypes
 
-
 #removing . in thousand separator
 df['Casos Totales'] = df['Casos Totales'].str.replace(".","")
 
 # Convert everything to float values
 df['Nuevos Casos']= df['Nuevos Casos'].astype(float)
-df['Casos Totales']= df['Casos Totales'].astype(int)
+df['Casos Totales']= df['Casos Totales'].astype(float)
 df['Fallecidos']= df['Fallecidos'].astype(float)
 df['Recuperados']= df['Recuperados'].astype(float)
 
