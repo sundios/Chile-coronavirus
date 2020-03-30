@@ -53,8 +53,8 @@ df = df.str.replace(".","")
 df = int(float(df))
 
 
-#Selecting Yesterdays number to compare
-daily = daily.iloc[9:10, 1]
+#Selecting Last row of Daily. (Yesterday data to compare)
+daily = daily.iloc[-1, 1]
 
 #removing . in thousand separator
 daily = int(float(daily))
