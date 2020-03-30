@@ -40,7 +40,7 @@ wks = sh[19]
 
 df = df.iloc[0:16]
 
-# with df, starting at cell A1. 
+#Add to Regiones worksheet
 wks.set_dataframe(df,'A1',copy_head=True)
 
 
