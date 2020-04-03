@@ -5,6 +5,7 @@ Created on Thu Mar 19 20:36:31 2020
 
 @author: konradburchardt
 """
+
 #extracting Data from https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/
 import requests
 from bs4 import BeautifulSoup
@@ -66,7 +67,7 @@ df.loc[rowIndex, 'Recuperados'] = recuperados
 df = df.fillna(0)
 
 #creating date column
-dates = datetime.date.today().strftime("%d-%m-%Y")
+dates = datetime.date.today().strftime("%Y-%m-%d")
 
 df['Dates'] =  dates
 
@@ -156,9 +157,9 @@ daily['Recuperados'] = daily['Recuperados'].astype(float)
 daily['Fallecidos'] = daily['Fallecidos'].astype(float)
 
 
-daily = pd.DataFrame(daily)
+daily["Fecha"] = pd.to_datetime(daily["Fecha"]).dt.strftime("%Y-%m-%d")
 
-
+daily = daily.sort_values(by=['Fecha'])
 
 #plotting
 img_file2 = 'Images/Totales-Chile'

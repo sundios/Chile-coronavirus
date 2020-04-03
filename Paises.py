@@ -43,7 +43,7 @@ for tr in soup2.find_all("tr")[1:]:
     
 
 #transforming scraped data(text) into a dataframe with new columns
-df = pd.DataFrame(rows, columns =  ['Country', 'Total Cases', 'New Cases','Total Deaths','New Deaths','Total Recovered','Active Cases','Serious,Critical' , 'Total Cases/1M pop','Total Deaths/1M pop', 'Reported 1st Case'])
+df = pd.DataFrame(rows, columns =  ['Country', 'Total Cases', 'New Cases','Total Deaths','New Deaths','Total Recovered','Active Cases','Serious,Critical' , 'Total Cases/1M pop','Total Deaths/1M pop'])
 
 
 #slicing DF with only Southamerican Countries

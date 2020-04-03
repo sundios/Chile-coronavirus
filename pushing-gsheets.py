@@ -65,7 +65,7 @@ for j in range(1,18):
 wks = sh[18]
 
 #Add to Paises worksheet
-wks.set_dataframe(Paises,'A1',copy_head=True)
+wks.set_dataframe(Paises,'A3',copy_head=False)
 
     
 ###### THIS IS ONLY IF WE WANT TO CREATE A NEW SHEET #####
