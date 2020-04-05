@@ -36,6 +36,10 @@ df = df.sort_values(by=['Region','Dates'])
 
 df = df[['Region','Nuevos Casos','Casos Totales','Fallecidos','Recuperados','Dates']]
 
+df["Dates"] = pd.to_datetime(df["Dates"]).dt.strftime("%Y-%m-%d")
+
+daily = daily.sort_values(by=['Fecha'])
+
 #grouping regiones together by date
 r=[]
 for j in range(1):
