@@ -1,6 +1,6 @@
 
-#### This files is a DAG that shold  be run on Apache Airflow
-### The checks if the minsal changed the data by comparing the last row of the main DF to the current row.
+#### This files is a DAG that should be run on Apache Airflow
+### This checks if the minsal changed the data by comparing the last row of the main DF to the current row.
 ### If value is the same then the data has not been changed, so we need to add a time.sleep(10 min or something) so that we can check every 10 min
 ### If value is different then data has been updated and we can run our Pipeline.
 ### Work in progress
@@ -30,7 +30,7 @@ default_args = {
 }
 
 
-PARENT_DAG_NAME = 'COVID19_Chile191'
+PARENT_DAG_NAME = 'COVID19_Chile11111'
 
 def branch_func(**kwargs):
     ti = kwargs['ti']
@@ -40,6 +40,7 @@ def branch_func(**kwargs):
     if xcom_value == 'did Minsal updated the data? Yes! they have. So now we should run all our scripts.':
         return 'continue_task'
     else:
+        time.sleep(600) #This sleeps for 600 seconds, which is 10 minutes.
         return 'minsal_check'
 
 
@@ -52,10 +53,10 @@ task1 = BashOperator(task_id="minsal_check",
  dag=dag)
 
 # pull_task = BashOperator(task_id="pull_task",
-# 	bash_command='echo {{  ti.xcom_pull("minsal_check") }}',
-# 	provide_context=True,
-# 	xcom_value=True,
-# 	dag=dag)
+#   bash_command='echo {{  ti.xcom_pull("minsal_check") }}',
+#   provide_context=True,
+#   xcom_value=True,
+#   dag=dag)
 
 branch_op = BranchPythonOperator(
     task_id='branch_task',
@@ -63,9 +64,22 @@ branch_op = BranchPythonOperator(
     python_callable=branch_func,
     dag=dag)
 
+
+
 #Here we define the pipline
+#Here we get data for Totals,Scorecard and Regiones worksheets
 continue_op = BashOperator(task_id="continue_task",
- bash_command="echo Now we run all the scripts to get values and push them live",
+ bash_command="python ~/dags/corona.py",
+ dag=dag)
+
+
+continue_op2 = BashOperator(task_id="Scrape_Regiones_data",
+ bash_command="python ~/dags/regiones.py",
+ dag=dag)
+
+
+continue_op3 = BashOperator(task_id="Scrape_Paises_data",
+ bash_command="python ~/dags/Paises.py",
  dag=dag)
 
 
@@ -75,6 +89,12 @@ stop_op = BashOperator(task_id="stop_task",
  xcom_push=True, 
  dag=dag)
 
+task1 >> branch_op >> [continue_op , stop_op] 
+continue_op >> continue_op2 >> continue_op3
 
-task1 >> branch_op >> [continue_op, stop_op]
+
+
+
+
+
 
