@@ -30,7 +30,7 @@ default_args = {
 }
 
 
-PARENT_DAG_NAME = 'COVID19_Chile11111'
+PARENT_DAG_NAME = 'COVID19_Chile'
 
 def branch_func(**kwargs):
     ti = kwargs['ti']
@@ -44,7 +44,7 @@ def branch_func(**kwargs):
         return 'minsal_check'
 
 
-dag = DAG(dag_id=PARENT_DAG_NAME, default_args=default_args, schedule_interval='10 10 * * *',start_date=datetime(2020, 4, 3))
+dag = DAG(dag_id=PARENT_DAG_NAME, default_args=default_args, schedule_interval='10 10 * * *',start_date=datetime(2020, 4, 8))
 
 # task1
 task1 = BashOperator(task_id="minsal_check",
