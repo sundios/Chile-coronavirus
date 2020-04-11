@@ -10,10 +10,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import glob
+from corona import daily
 
 
 #Files that we want to run to get totals
-files = sorted(glob.glob('*-coronavirus-chile.csv'))
+files = sorted(glob.glob('/usr/local/airflow/dags/*-coronavirus-chile.csv'))
 
 #opening all files
 li = []
@@ -52,6 +53,28 @@ for j in range(1):
 #Groupping Regions by totals
         
 group_region = df.groupby(['Region']).sum()
+
+
+import datetime
+import pygsheets
+
+#***** CONNECTION TO GOOGLE SHEETS *****
+
+gc = pygsheets.authorize(service_file='/usr/local/airflow/dags/corona-271822-557422d15ba0.json')
+
+#open the google spreadsheet 
+sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1FeE8dWfdFJi8lgi_sVg2Qn5xHM9wvP8eB7tB39lm374/edit#gid=0')
+
+                    
+
+#***** PUSHING DATA TO EACH OF THE REGIONES WORKSHEET. THIS IS FOR ALL REGIONES GRAPHS. *****
+
+# Pushing Regiones values to Google Sheets
+for j in range(1,18):
+    print(j)
+    wsheet = sh[j]
+    wsheet.set_dataframe(r[j-1],'A1',copy_head=True)
+    
 
 
 

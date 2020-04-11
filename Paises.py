@@ -43,7 +43,7 @@ for tr in soup2.find_all("tr")[1:]:
     
 
 #transforming scraped data(text) into a dataframe with new columns
-df = pd.DataFrame(rows, columns =  ['Country', 'Total Cases', 'New Cases','Total Deaths','New Deaths','Total Recovered','Active Cases','Serious,Critical' , 'Total Cases/1M pop','Total Deaths/1M pop','Total Tests','Tests/1M pop'])
+df = pd.DataFrame(rows, columns =  ['Country', 'Total Cases', 'New Cases','Total Deaths','New Deaths','Total Recovered','Active Cases','Serious,Critical' , 'Total Cases/1M pop','Total Deaths/1M pop','Total Tests','Tests/1M pop','Country Again'])
 
 
 #slicing DF with only Southamerican Countries
@@ -68,4 +68,22 @@ Paises =  pd.concat(df_list)
 #This is the DF we need to push to Gsheets
 Paises = Paises.reset_index(drop=True)
 
+
+import datetime
+import pygsheets
+
+#***** CONNECTION TO GOOGLE SHEETS *****
+
+gc = pygsheets.authorize(service_file='/usr/local/airflow/dags/corona-271822-557422d15ba0.json')
+
+#open the google spreadsheet 
+sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1FeE8dWfdFJi8lgi_sVg2Qn5xHM9wvP8eB7tB39lm374/edit#gid=0')
+
+#***** PUSHING DATA TO PAISES WORKSHEET. THIS IS FOR THE SOUTH AMERICA MAPS AND THE GRAPH WITH COUNTRIES . *****
+
+#Selecting worksheet 18 Paises
+wks = sh[18]
+
+#Add to Paises worksheet
+wks.set_dataframe(Paises,'A3',copy_head=False)                    
 

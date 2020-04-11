@@ -53,6 +53,8 @@ recuperados = df.iloc[19:20,1]
 #transforming to string and removing index and header *** This is gold***
 recuperados = recuperados.to_string(index=False,header=False)
 
+#removing . in thousand separator
+recuperados = recuperados.replace(".","")
 
 #removing noise and selecting only columns we need
 df = df.iloc[2:19]
@@ -90,7 +92,7 @@ df_plot = df.iloc[0:16]
 
 #plotting New cases and all cases of Chile
 
-img_file = 'Images/' + datetime.date.today().strftime("%d-%m-%Y")
+img_file = '/usr/local/airflow/dags/Images/' + datetime.date.today().strftime("%d-%m-%Y")
 title = 'Corona Virus en Chile ' + datetime.date.today().strftime("%d-%m-%Y")
 
 
@@ -110,14 +112,14 @@ plt.show()
 #exporting dataframe to CSV with date
 
 #filename with date
-filename = datetime.date.today().strftime("%d-%m-%Y")+'-coronavirus-chile.csv'
+filename = '/usr/local/airflow/dags/' + datetime.date.today().strftime("%d-%m-%Y")+'-coronavirus-chile.csv'
 
 #here we export it to CSV
 df.to_csv(filename,index=False)
 
 
 #Files that we want to run to get totals
-files = sorted(glob.glob('*-coronavirus-chile.csv'))
+files = sorted(glob.glob('/usr/local/airflow/dags/*-coronavirus-chile.csv'))
 
 
 dates=[]
@@ -162,7 +164,7 @@ daily["Fecha"] = pd.to_datetime(daily["Fecha"]).dt.strftime("%Y-%m-%d")
 daily = daily.sort_values(by=['Fecha'])
 
 #plotting
-img_file2 = 'Images/Totales-Chile'
+img_file2 = '/usr/local/airflow/dags/Images/Totales-Chile'
 title2 = 'Corona Virus en Chile Totales ' + datetime.date.today().strftime("%d-%m-%Y")
 
 #double Axis
@@ -186,6 +188,47 @@ plt.savefig(img_file2, bbox_inches='tight')
 plt.show()
 
 
+
+import datetime
+import pygsheets
+
+#***** CONNECTION TO GOOGLE SHEETS *****
+
+gc = pygsheets.authorize(service_file='/usr/local/airflow/dags/corona-271822-557422d15ba0.json')
+
+#open the google spreadsheet 
+sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1FeE8dWfdFJi8lgi_sVg2Qn5xHM9wvP8eB7tB39lm374/edit#gid=0')
+
+                    
+#***** PUSHING DATA TO TOTALS WORKSHEET. THIS IS FOR MAIN GRAPH AND SECONDARY GRAPH *****                  
+                    
+#select the first sheet TOTALS
+wks = sh[0]
+
+#update the first sheet with df, starting at cell A1. MAIN GRAPH and SECONDARY GRAPH
+wks.set_dataframe(daily,'A1',copy_head=True)
+
+
+#***** PUSHING DATA TO TOTALES WORKSHEET. THIS IS FOR SCORECARD *****
+
+#Getting only last row
+totales = df.iloc[16:17,]
+
+#selecting sheet #20 TOTALES
+tot = sh[20]
+
+#Updating Totales for Scorecard
+tot.set_dataframe(totales,'A1',copy_head=True)
+
+#***** PUSHING DATA TO REGIONES WORKSHEET. THIS IS FOR REGIONES TABLE *****
+
+#select sheet 19 Regiones
+wks = sh[19]
+
+df = df.iloc[0:16]
+
+#Add to Regiones worksheet
+wks.set_dataframe(df,'A1',copy_head=True)
 
 
 
