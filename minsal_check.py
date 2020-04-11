@@ -53,10 +53,10 @@ def minsal():
     df = int(float(df))
     
     #Files that we want to run to get totals
-    #files = sorted(glob.glob('/usr/local/airflow/dags/*-coronavirus-chile.csv'))
+    files = sorted(glob.glob('/usr/local/airflow/dags/*-coronavirus-chile.csv'))
     
     #test locally
-    files = sorted(glob.glob('*-coronavirus-chile.csv'))
+    #files = sorted(glob.glob('*-coronavirus-chile.csv'))
     
     dates=[]
     totals = []
@@ -111,7 +111,7 @@ def minsal():
     
     checker(df,daily)
 
-
+#Here we check if minsal has updated the data
 
 def checker(df,daily):
     import subprocess
@@ -122,15 +122,18 @@ def checker(df,daily):
     while df == daily:
         #this means data has not been updated yet
         No = 'did Minsal updated the data? No they havent, they are still sleeping. Data is the same as yesterday'
-        #Sleep for 5 minutes and then check again
-        time.sleep(5)
+        #Sleep for 5 minutes(300 seconds) and then check again
+        time.sleep(300)
         print(No)
         minsal()
-       
-    else:
-        #This means data is not the same so minsal has changed the data
-        Yes = 'did Minsal updated the data? Yes! they have. So now we should run all our scripts.'
-        print(Yes)
+        break
+        if df != daily:
+            #This means data is not the same so minsal has changed the data
+            Yes = 'did Minsal updated the data? Yes! they have. So now we should run all our scripts.'
+            print(Yes)
         
+    
 minsal()
+
+
 
