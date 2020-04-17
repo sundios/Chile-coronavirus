@@ -25,8 +25,8 @@ numpy==1.18.2
 
 ## Sources 
 
-[Worldometers Corona Virus Data](https://www.worldometers.info/coronavirus/#countries)
-[Minsal Chile Corona Virus Data](https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/)
+* [Worldometers Corona Virus Data](https://www.worldometers.info/coronavirus/#countries)
+* [Minsal Chile Corona Virus Data](https://www.minsal.cl/nuevo-coronavirus-2019-ncov/casos-confirmados-en-chile-covid-19/)
 
 ## PipeLine
 
@@ -34,13 +34,12 @@ To scrape the minsal and the worldometers data I built a pipline using airflow t
 
 The task are:
 
-1. Minsal_check: scrapes the site and compares the current data with a while loop with yesterday's data. If data is the same than yesterday then the while loops keeps running until the data has been updated and we can proceed with out pipeline.
-
-2. Continue_task: echo a message that tell us that data has been change.
-3. Scraping Data
-   1. Scrape_Minsal_data: Scrape new minsal data,clean the data, Create daily csv and push it to g oogle sheets
-   2. Scrape_Regiones_Data: We open all files from the minsal data we scraped and concatenate all of them in one file, then we do some cleaning and output all different regions by totals. We push these into different worksheets in google sheets.
-   3. Scrape_Paises_data: Scrape new data from Worldometer and then only select southamerican countries and push it to google sheets.
+1. **Minsal_check:** scrapes the site and compares the current data with a while loop with yesterday's data. If data is the same than yesterday then the while loops keeps running until the data has been updated and we can proceed with out pipeline.
+2. **Continue_task:** echo a message that tell us that data has been change.
+3. **Scraping Data**
+   1. **Scrape_Minsal_data:** Scrape new minsal data,clean the data, Create daily csv and push it to g oogle sheets
+   2. **Scrape_Regiones_Data:** We open all files from the minsal data we scraped and concatenate all of them in one file, then we do some cleaning and output all different regions by totals. We push these into different worksheets in google sheets.
+   3. **Scrape_Paises_data:** Scrape new data from Worldometer and then only select southamerican countries and push it to google sheets.
 4. finish_task: echo task is finished
 
  ![Graph View](/Images/gv.png)
