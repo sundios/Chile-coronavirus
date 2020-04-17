@@ -30,7 +30,9 @@ numpy==1.18.2
 
 ## PipeLine
 
-To scrape the minsal and the worldometers data I built a pipline using airflow that consists in 5 tasks that run 3 different scripts. each of the script pushes data to a Google spreadsheet. I wanted to use google spreadhseet since the data is not that heavy and its easy to connect google sheets with data studio.
+To scrape the minsal and the worldometers data I built a pipline using airflow that consists in 5 tasks that run 3 different scripts. Each of the script pushes data to a Google spreadsheet. I wanted to use google spreadhseet since the data is not that heavy and its easy to connect google sheets. with data studio.
+
+The pipline is set to run every day at 11:05AM CLT. Since airflow uses Directed acyclic graphs I cant re run a task, so I created a while loop as the first task that keeps runing until the condition is true.
 
 The task are:
 
@@ -40,9 +42,11 @@ The task are:
    1. **Scrape_Minsal_data:** Scrape new minsal data,clean the data, Create daily csv and push it to g oogle sheets
    2. **Scrape_Regiones_Data:** We open all files from the minsal data we scraped and concatenate all of them in one file, then we do some cleaning and output all different regions by totals. We push these into different worksheets in google sheets.
    3. **Scrape_Paises_data:** Scrape new data from Worldometer and then only select southamerican countries and push it to google sheets.
-4. finish_task: echo task is finished
+4. **finish_task:** echo task is finished
 
  ![Graph View](/Images/gv.png)
+
+
 
 
 
