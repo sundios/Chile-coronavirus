@@ -42,10 +42,10 @@ def minsal():
     
     
     #transforming scraped data(text) into a dataframe with new columns
-    df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales','% Casos totales','Fallecidos'])
-    
+    df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Nuevos Casos 2 sin sintomas', 'Casos Totales','% Casos totales','Fallecidos','Tasa *100','Incremento Diario'])
+
     #Selecting nunmber from todays data to compare
-    df = df.iloc[18:19, 2]
+    df = df.iloc[18:19, 1]
     
     #removing . in thousand separator
     df = df.str.replace(".","")
@@ -122,9 +122,9 @@ def checker(df,daily):
     while df == daily:
         #this means data has not been updated yet
         No = 'did Minsal updated the data? No they havent, they are still sleeping. Data is the same as yesterday'
+        print(No)
         #Sleep for 5 minutes(300 seconds) and then check again
         time.sleep(300)
-        print(No)
         minsal()
         break
         if df != daily:

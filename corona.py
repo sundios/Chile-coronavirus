@@ -44,11 +44,11 @@ for tr in soup.find_all("tr")[1:]:
 
 
 #transforming scraped data(text) into a dataframe with new columns
-df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Casos Totales','% Casos totales','Fallecidos'])
+df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Nuevos Casos 2 sin sintomas', 'Casos Totales','% Casos totales','Fallecidos','Tasa *100','Incremento Diario'])
 
 
 #getting recuperados
-recuperados = df.iloc[19:20,1]
+recuperados = df.iloc[18:19,1]
 
 #transforming to string and removing index and header *** This is gold***
 recuperados = recuperados.to_string(index=False,header=False)
@@ -57,7 +57,7 @@ recuperados = recuperados.to_string(index=False,header=False)
 recuperados = recuperados.replace(".","")
 
 #removing noise and selecting only columns we need
-df = df.iloc[2:19]
+df = df.iloc[1:18]
 
 #selecting the row index where we want to place recuperados
 rowIndex = df.index[16]
@@ -79,11 +79,21 @@ df.dtypes
 #removing . in thousand separator
 df['Casos Totales'] = df['Casos Totales'].str.replace(".","")
 
+
+#removing * from nuevs casos 2
+df['Nuevos Casos 2 sin sintomas'] = df['Nuevos Casos 2 sin sintomas'].str.replace("*","")
+
+
+
 # Convert everything to float values
 df['Nuevos Casos']= df['Nuevos Casos'].astype(float)
+df['Nuevos Casos 2']= df['Nuevos Casos 2 sin sintomas'].astype(float)
 df['Casos Totales']= df['Casos Totales'].astype(float)
 df['Fallecidos']= df['Fallecidos'].astype(float)
 df['Recuperados']= df['Recuperados'].astype(float)
+
+
+df = df[['Region','Nuevos Casos','Casos Totales','% Casos totales','Fallecidos','Recuperados','Dates']]
 
 
 
@@ -112,7 +122,7 @@ plt.show()
 #exporting dataframe to CSV with date
 
 #filename with date
-filename = '/usr/local/airflow/dags/' + datetime.date.today().strftime("%d-%m-%Y")+'-coronavirus-chile.csv'
+filename =  '/usr/local/airflow/dags/' +datetime.date.today().strftime("%d-%m-%Y")+'-coronavirus-chile.csv'
 
 #here we export it to CSV
 df.to_csv(filename,index=False)
