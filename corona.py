@@ -44,7 +44,7 @@ for tr in soup.find_all("tr")[1:]:
 
 
 #transforming scraped data(text) into a dataframe with new columns
-df = pd.DataFrame(rows, columns =  ['Region', 'Nuevos Casos', 'Nuevos Casos 2 sin sintomas', 'Casos Totales','% Casos totales','Fallecidos','Tasa *100','Incremento Diario'])
+df = pd.DataFrame(rows, columns =  ['Region','Casos Totales', 'Nuevos Casos', 'Nuevos Casos con sintomas', 'Nuevos Casos sin sintomas' ,'Fallecidos','% Casos totales'])
 
 
 #getting recuperados
@@ -79,15 +79,14 @@ df.dtypes
 #removing . in thousand separator
 df['Casos Totales'] = df['Casos Totales'].str.replace(".","")
 
-
-#removing * from nuevs casos 2
-df['Nuevos Casos 2 sin sintomas'] = df['Nuevos Casos 2 sin sintomas'].str.replace("*","")
-
+#removing . in thousand separator
+df['Nuevos Casos'] = df['Nuevos Casos'].str.replace(".","")
 
 
 # Convert everything to float values
 df['Nuevos Casos']= df['Nuevos Casos'].astype(float)
-df['Nuevos Casos 2']= df['Nuevos Casos 2 sin sintomas'].astype(float)
+df['Nuevos Casos con sintomas']= df['Nuevos Casos con sintomas'].astype(float)
+df['Nuevos Casos sin sintomas']= df['Nuevos Casos sin sintomas'].astype(float)
 df['Casos Totales']= df['Casos Totales'].astype(float)
 df['Fallecidos']= df['Fallecidos'].astype(float)
 df['Recuperados']= df['Recuperados'].astype(float)
