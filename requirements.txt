@@ -2,4 +2,4 @@ pygsheets==2.0.3.1
 matplotlib==3.2.1
 beautifulsoup4==4.9.0
 pandas==1.0.3
-numpy==1.18.2
+numpy==1.22.0
